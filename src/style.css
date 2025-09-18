@@ -1,0 +1,345 @@
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* ================= HERO ================= */
+.hero-main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  position: relative; /* Needed for ::before to work */
+  transition: 0.4s;
+  overflow: hidden; /* Ensures blur doesn’t leak outside */
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ================= BUTTONS ================= */
+button,
+.top-bar .top-button, button {
+  padding: 16px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  background: #28a745;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(40,167,69,0.25);
+  transition: 0.3s;
+}
+button:hover,
+.top-bar .top-button:hover,
+.hero-buttons button:hover {
+  background: #218838;
+  box-shadow: 0 6px 20px rgba(33,136,56,0.35);
+}
+.hero-buttons{
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  display: flex;
+  margin-top: 80px;
+  flex-wrap: wrap;
+
+}
+
+
+/* ================= TOP BAR ================= */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  z-index: 100;
+  transition: 0.4s;
+  box-sizing: border-box;
+}
+
+.top-bar .title {
+  position: absolute;
+  left: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.top-bar.hidden {
+  top: -80px; /* moves it out of view */
+}
+
+
+.top-bar .top-button {
+  padding: 10px 22px;
+  border-radius: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background:  #28a745;
+  box-shadow: 0 4px 12px rgba(40,167,69,0.25);
+  transition: 0.3s;
+  white-space: nowrap;
+}
+.top-bar .top-button:hover {
+  background: #218838;
+  box-shadow: 0 6px 20px rgba(33,136,56,0.35);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+/* ================= PRODUCTS ================= */
+.products {
+  margin-top: 60px;
+  padding: 0 30px;
+  overflow: hidden;
+}
+.products-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color:#000000;
+  text-align: center;
+}
+
+.products-grid {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #1e7e34 transparent;
+}
+.products-grid::-webkit-scrollbar {
+  height: 10px;
+}
+.products-grid::-webkit-scrollbar-thumb {
+  background-color: #1e7e34;
+  border-radius: 8px;
+}
+.products-grid .card {
+  flex: 0 0 320px;
+  text-align: center;
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.products-grid .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.products-grid .card h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.products-grid .card p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #666;
+}
+/* ================= RESPONSIVENESS ================= */
+@media (max-width: 1024px) {
+  .hero-content {
+    padding: 40px 30px;
+  }
+  .hero-content h1 {
+    font-size: 34px;
+  }
+  .products-grid .card {
+    flex: 0 0 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 12px 20px;
+    justify-content: center;
+    gap: 10px;
+  }
+  .top-bar .top-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  .hero-content h1 {
+    font-size: 28px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  .hero-buttons button {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+  }
+  .products-heading {
+    font-size: 26px;
+  }
+  .products-grid .card {
+    flex: 0 0 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 25px 20px;
+  }
+  .hero-content h1 {
+    font-size: 24px;
+  }
+  .hero-subtitle {
+    font-size: 14px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .products-heading {
+    font-size: 22px;
+  }
+  .products-grid {
+    gap: 15px;
+  }
+  .products-grid .card {
+    flex: 0 0 200px;
+    padding: 20px 15px;
+  }
+}
+/* ================= WORDS ================= */
+.words {
+  margin-top: 80px;
+  font-size: 100px;
+  padding: 0 15px;
+  color: #000000;
+  
+}
+.desc {
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 80px;
+  text-align: center;
+}
+.words .highlight {
+  color: #28a745;
+}
+.words .par {
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+}
+
+.small-word {
+  font-size: 0.75em;
+  color: #1e7e34;
+  font-weight: bold;
+}
+
+.big-word {
+  font-size: 1.6em;
+  color: #1e7e34;
+  font-weight: bold;
+}
+
+.hero-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 200, 0, 0.25);
+  filter: blur(300px);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* ================= FEATURES ================= */
+.features {
+  margin-top: 70px;
+  margin-bottom: auto;
+  padding: 0 30px;
+}
+.features h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #000000;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.feature {
+  background: #fff;
+  padding: 30px 50px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.feature h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.feature p {
+  font-size: 15px;
+  color: #555;
+}
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+}
+
+
+/* ================= FOOTER ================= */
+.footer {
+  margin-top: 80px;
+  padding: 25px 15px;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  color: #555;
+  font-size: 14px;
+}
+.footer nav {
+  margin-top: 8px;
+}
+.footer a {
+  color: #28a745; 
+  text-decoration: none;
+  margin: 0 6px;
+  font-weight: 500;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
