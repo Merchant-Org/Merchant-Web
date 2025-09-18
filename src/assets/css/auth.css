@@ -108,6 +108,9 @@
   align-items: start;
   justify-items: left;
   color: #155724;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 8px; /* space between label and input */
 }
 
 .auth-form input,
@@ -116,8 +119,14 @@
   padding: 18px 20px; /* taller input fields */
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 14px;
+  border-radius: 2px;
   transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.check input {
+  width: 20px;
+  height: 20px;
+  padding: 0;
 }
 
 .auth-form input:focus,
@@ -133,7 +142,7 @@
   background: #28a745;
   color: #fff;
   border: none;
-  border-radius: 14px;
+  border-radius: 2px;
   padding: 18px; /* taller button */
   font-size: 17px;
   font-weight: 600;
@@ -164,13 +173,16 @@
 }
 
 .form-options input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  border: 1px solid #28a745;
-  border-radius: 3px;
-  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
   position: relative;
+  transition: background 0.3s, border-color 0.3s;
 }
 
 .form-options input[type="checkbox"]:checked {
@@ -190,12 +202,12 @@
 }
 
 .forgot-link {
-  color: #1e7e34;
+  color: #28a745;
   text-decoration: none;
-  font-size: 14px;
+  font-weight: 600;
 }
 .forgot-link:hover {
-  text-decoration: underline;
+  text-decoration: wavy;
 }
 
 /* ================= SWITCH TEXT ================= */
@@ -212,7 +224,7 @@
 }
 
 .switch-text .link:hover {
-  text-decoration: underline;
+  text-decoration: wavy;
 }
 
 /* ================= REGISTER PROGRESS ================= */

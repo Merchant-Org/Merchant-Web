@@ -18,7 +18,7 @@
             <input id="password" type="password" placeholder="Enter your password" v-model="login.password" required />
           </div>
           <div class="form-options">
-            <label><input type="checkbox" v-model="rememberMe" /> Remember me</label>
+            <label class="check"><input type="checkbox" v-model="rememberMe" /> Remember me</label>
             <router-link to="/forgot" class="forgot-link">Forgot password?</router-link>
           </div>
           <button type="submit" class="primary-btn">Login</button>
