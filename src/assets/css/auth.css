@@ -168,7 +168,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
   color: #444;
 }
 
@@ -223,6 +222,12 @@
   font-weight: 600;
 }
 
+.link {
+  color: #28a745;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .switch-text .link:hover {
   text-decoration: wavy;
 }
@@ -266,4 +271,13 @@
 .navigation button:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+.register-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.register-form input {
+
 }

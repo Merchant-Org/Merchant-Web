@@ -25,7 +25,7 @@
         </form>
         <p class="switch-text">
           Not a member yet? 
-          <router-link to="/register" class="link">Register here</router-link>
+          <router-link to="/UserRegister" class="link">Register here</router-link>
         </p>
       </div>
     </div>

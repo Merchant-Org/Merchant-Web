@@ -4,7 +4,7 @@
     <header :class="['top-bar', { hidden: isHidden }]">
       <p class="title">Merchant</p>
       <router-link to="/login" class="top-button">Login</router-link>
-      <router-link to="/register" class="top-button">Register</router-link>
+      <router-link to="/UserRegister" class="top-button">Register</router-link>
     </header>
 
     <!-- Hero Overlay -->
