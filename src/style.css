@@ -128,8 +128,7 @@ button:hover,
 
 .products-grid {
   display: flex;
-  gap: 25px;
-  overflow-x: auto;
+  gap: 25px;;
   padding-bottom: 15px;
   scrollbar-width: thin;
   scrollbar-color: #1e7e34 transparent;
@@ -151,7 +150,7 @@ button:hover,
 }
 .products-grid .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
 }
 
 .products-grid .card h3 {
@@ -256,7 +255,7 @@ button:hover,
 }
 
 .small-word {
-  font-size: 0.75em;
+  font-size: 0.65em;
   color: #1e7e34;
   font-weight: bold;
 }
