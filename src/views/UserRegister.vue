@@ -1,14 +1,18 @@
 <template>
   <div class="auth-page">
+    <!-- Left side -->
     <div class="left-side">
       <h1>Join <span class="pname">Merchant</span> Today</h1>
       <p>Start your journey with us.</p>
     </div>
 
+    <!-- Right side -->
     <div class="right-side">
       <div class="auth-card">
         <h2>Client Sign Up</h2>
+
         <form @submit.prevent="handleRegister" class="auth-form register-form">
+          <!-- First & Last Name -->
           <div class="form-row">
             <div class="form-group">
               <label for="Fname">First Name</label>
@@ -21,6 +25,7 @@
             </div>
           </div>
 
+          <!-- Email & Phone -->
           <div class="form-row">
             <div class="form-group">
               <label for="email">Email Address</label>
@@ -29,10 +34,20 @@
 
             <div class="form-group">
               <label for="pnumber">Phone Number</label>
-              <input id="pnumber" v-model="form.phone" type="tel" required />
+              <div class="phone-input">  
+                <span class="country-code">🇱🇾 +218</span>
+                <input
+                  id="pnumber"
+                  v-model="form.phone"
+                  type="tel"
+                  required
+                  placeholder="91 234 5678"
+                />
+              </div>
             </div>
           </div>
 
+          <!-- Password & Confirm -->
           <div class="form-row">
             <div class="form-group">
               <label for="password">Password</label>
@@ -45,6 +60,7 @@
             </div>
           </div>
 
+          <!-- Terms -->
           <div class="form-options">
             <label class="check">
               <input type="checkbox" v-model="form.terms" />
@@ -53,9 +69,11 @@
             </label>
           </div>
 
+          <!-- Submit -->
           <button type="submit" class="primary-btn">Sign Up</button>
         </form>
 
+        <!-- Switch to login -->
         <p class="switch-text">
           Already have an account?
           <router-link to="/login" class="link">Login</router-link>
@@ -64,6 +82,7 @@
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { reactive } from "vue"
@@ -89,7 +108,14 @@ const handleRegister = () => {
     return
   }
 
-  console.log("Registering user:", form)
+  // Always prefix phone with +218
+  const fullPhone = "+218" + form.phone.replace(/^0+/, "") 
+  // remove any leading zero(s)
+
+  console.log("Registering user:", {
+    ...form,
+    phone: fullPhone,
+  })
 
   // Reset
   form.firstName = ""

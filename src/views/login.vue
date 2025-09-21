@@ -1,5 +1,5 @@
 <template>
-  <div class="auth-page">
+  <div class="auth-page login-page">
     <div class="left-side">
       <h1>Welcome Back to <span class="pname">Merchant</span></h1>
       <p>Your account, your control</p>

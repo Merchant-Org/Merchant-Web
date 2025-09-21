@@ -22,7 +22,9 @@
         </section>
         <!-- Create Store Button -->
         <div class="hero-buttons">
-          <button>Create Store</button>
+          <router-link to="/create-store">
+            <button>Create Store</button>
+          </router-link>
           <button>Explore Our Products</button>
         </div>
         <!-- Features Section -->

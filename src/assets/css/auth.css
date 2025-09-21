@@ -53,24 +53,10 @@
 }
 
 
-/* Center the card */
-.auth-card {
-  width: 100%;
-  max-width: 450px;
-  background: rgba(255, 255, 255, 0.98);
-  border-radius: 20px;
-  padding: 40px 30px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-
 /* ================= AUTH CARD ================= */
 .auth-card {
   width: 100%;
-  max-width: 500px;   /* slightly wider */
+  max-width: 700px;   /* slightly wider */
   background: rgba(255, 255, 255, 0.98);
   border-radius: 5px;
   padding: 60px 40px; /* more padding inside */
@@ -80,10 +66,22 @@
   box-sizing: border-box;
 }
 
+.login-page .auth-card {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 5px;
+  padding: 60px 40px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .auth-card h2 {
-  font-size: 32px;   /* bigger title */
+  font-size: 32px;
   font-weight: 700;
-  margin-bottom: 40px; /* more space below */
+  margin-bottom: 40px;
   color: #155724;
 }
 
@@ -110,19 +108,65 @@
   color: #155724;
   width: 100%;
   text-align: left;
-  margin-bottom: 8px; /* space between label and input */
+  margin-bottom: 8px;
 }
 
 .auth-form input,
 .step-content input {
   width: 100%;
-  padding: 18px 20px; /* taller input fields */
+  padding: 18px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1.5px solid #ccc;
   border-radius: 2px;
   transition: border-color 0.2s, box-shadow 0.2s;
   box-sizing: border-box;
 }
+
+.step-content .form-group,
+.step-content input,
+.step-content .phone-input {
+  margin-bottom: 15px;
+}
+
+.step-content .phone-input {
+  display: flex;
+  width: 100%;
+  display: flex;
+  gap: 0;
+}
+
+.step-content .country-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-right: none;
+  border-radius: 2px 0 0 2px;
+  background: #e0e0e0;
+  box-sizing: border-box;
+  min-width: 70px;
+  height: 52px;
+  user-select: none;
+}
+
+.step-content .phone-input input {
+  flex: 1;
+  padding: 18px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 0 2px 2px 0;
+  height: 52px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.step-content .phone-input input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.25);
+}
+
 .check input {
   width: 20px;
   height: 20px;
@@ -276,8 +320,41 @@
 .register-form .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1rem;
 }
-.register-form input {
+.phone-input {
+  display: flex;
+  width: 100%;
+}
 
+.country-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-right: none;
+  border-radius: 2px 0 0 2px;
+  background: #e0e0e0;
+  box-sizing: border-box;
+  min-width: 70px;
+  height: 56px;                 
+  user-select: none;
+}
+
+.phone-input input {
+  flex: 1;
+  padding: 0 14px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 0 2px 2px 0;
+  height: 56px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.phone-input input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.25);
 }
